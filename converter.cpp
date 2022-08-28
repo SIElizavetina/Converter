@@ -1,4 +1,4 @@
-#include "converter.h"
+﻿#include "converter.h"
 #include "ui_converter.h"
 #include "cmath"
 
@@ -550,24 +550,11 @@ void Converter::on_action_reference_triggered()
 
 void Converter::on_action_information_triggered()
 {
-    QFile file("README.txt");
-    QString A;
-    QByteArray data;
-    if(!file.open(QIODevice::ReadOnly))
-    {
-        A = "Ошибка\nФайл не найден";
-    }
-    else
-    {
-        data = file.readAll();
-        A = data;
-    }
-
      QString About= "Программа предназначена для изучения переводов между различными системами счисления, может использоваться как простой конвертер.\n";
      About += "Обратная связь: elizavetinas@yandex.ru\n";
      About += "Москва 2022г.";
 
-     QMessageBox MB(("О программе"),A,QMessageBox::NoIcon,QMessageBox::Ok,Qt::NoButton,Qt::NoButton);
+     QMessageBox MB(("О программе"),About,QMessageBox::NoIcon,QMessageBox::Ok,Qt::NoButton,Qt::NoButton);
 
      MB.setWindowIcon(QIcon(":/new/icons/icon.ico"));
 
